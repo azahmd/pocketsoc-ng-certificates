@@ -1,0 +1,3 @@
+# Create certificate for 'example.org' with an alternative name of
+# 'www.example.org'. It will be stored in the directory ${CERT_DIR}/example.org
+${HOST_HOSTNAME}
