@@ -1,6 +1,6 @@
 FROM quay.io/centos/centos:stream8
 
-RUN dnf install -y python3 openssl
+RUN dnf install -y python3 openssl diff
 RUN dnf update -y
 
 RUN mkdir -p /etc/dehydrated/alpn-certs && mkdir -p /etc/dehydrated/certs
