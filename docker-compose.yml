@@ -13,7 +13,7 @@ services:
 volumes:
   certificates:
   
-  networks:
+networks:
   certificate:
     ipam:
       config:
