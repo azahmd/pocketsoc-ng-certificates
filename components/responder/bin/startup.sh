@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /root
+cd /opt/pocketsoc-ng/bin/
 
 wget https://raw.githubusercontent.com/lukas2511/dehydrated/master/dehydrated
 chmod +x ./dehydrated
