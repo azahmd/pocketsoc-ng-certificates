@@ -2,18 +2,11 @@ version: '3'
 
 services:
   certificates:
-    build: ./components/certificates
+    image: quay.io/centos/centos:stream8
     container_name: certificates
+    command: cp -r /etc/letsencrypt /certificates
     volumes:
-      - certificates:/etc/dehydrated/certificates
-
-  responder:
-    build: ./components/responder
-    container_name: responder
-    volumes:
-      - certificates:/etc/dehydrated/certificates
-    ports:
-      - 443:443
+      - certificates:/certificates
 
 volumes:
   certificates:
