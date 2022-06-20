@@ -7,7 +7,7 @@ services:
     command: mkdir -p /certificates && cp -r /etc/letsencrypt /certificates
     volumes:
       - certificates:/certificates
-    networks:
+    network:
       - certs
 
 volumes:
