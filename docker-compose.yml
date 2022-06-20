@@ -7,6 +7,14 @@ services:
     command: mkdir -p /certificates && cp -r /etc/letsencrypt /certificates
     volumes:
       - certificates:/certificates
+    networks:
+      - certs
 
 volumes:
   certificates:
+  
+  networks:
+  certs:
+    ipam:
+      config:
+        - subnet: 172.32.0.0/16
