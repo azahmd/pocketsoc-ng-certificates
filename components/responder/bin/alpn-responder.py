@@ -49,7 +49,7 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         newsock = ssl_context.wrap_socket(self.request, server_side=True)
 
 if __name__ == "__main__":
-    HOST, PORT = "0.0.0.0", 10443
+    HOST, PORT = "0.0.0.0", 443
 
     server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler, bind_and_activate=False)
     server.allow_reuse_address = True
