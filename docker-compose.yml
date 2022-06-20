@@ -6,6 +6,14 @@ services:
     container_name: certificates
     volumes:
       - certificates:/etc/dehydrated/certificates
+    networks:
+      - infrastructure
+
+  responder:
+    build: ./components/responder
+    container_name: responder
+    volumes:
+      - certificates:/etc/dehydrated/certificates
     ports:
       - 443:443
     networks:
