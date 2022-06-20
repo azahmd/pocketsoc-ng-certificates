@@ -8,6 +8,6 @@ RUN mkdir -p /etc/dehydrated/alpn-certs && mkdir -p /etc/dehydrated/certs && mkd
 ADD ./bin /opt/pocketsoc-ng/bin
 ADD ./config /opt/pocketsoc-ng/config
 
-RUN chmod +x /opt/pocketsoc-ng/bin/startup.sh
+RUN chmod +x /opt/pocketsoc-ng/bin/startup.sh && chmod +x /opt/pocketsoc-ng/bin/register.sh && chmod +x /opt/pocketsoc-ng/bin/generate_certs.sh
 
 CMD ["/opt/pocketsoc-ng/bin/startup.sh"] 
