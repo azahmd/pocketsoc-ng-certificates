@@ -6,8 +6,6 @@ services:
     container_name: certificates
     volumes:
       - certificates:/etc/dehydrated/certificates
-    networks:
-      - infrastructure
 
   responder:
     build: ./components/responder
@@ -16,14 +14,6 @@ services:
       - certificates:/etc/dehydrated/certificates
     ports:
       - 443:443
-    networks:
-      - infrastructure
 
 volumes:
   certificates:
-  
-networks:
-  infrastructure:
-    ipam:
-      config:
-        - subnet: 172.31.0.0/16
