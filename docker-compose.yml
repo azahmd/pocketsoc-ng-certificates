@@ -4,7 +4,8 @@ services:
   certificates:
     image: quay.io/centos/centos:stream8
     container_name: certificates
-    command: mkdir -p /certificates && cp -r /etc/letsencrypt /certificates
+    command: mkdir -p /certificates && \ 
+             cp -r /etc/letsencrypt /certificates
     volumes:
       - certificates:/certificates
     networks:
