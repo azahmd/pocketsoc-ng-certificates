@@ -5,7 +5,12 @@ services:
     image: quay.io/centos/centos:stream8
     container_name: certificates
     command: mkdir -p /certificates && \ 
-             cp -r /etc/letsencrypt /certificates
+             if [ -d /etc/letsencrypt ]; then
+                 cp -r /etc/letsencrypt /certificates
+             else
+                 openssl req -new -x509 -nodes -out /certificates/server.crt -keyout /certificates/server.key -subj '/CN=localhost'
+             fi
+
     volumes:
       - certificates:/certificates
     networks:
