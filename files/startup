@@ -1,3 +1,4 @@
 #! /bin/bash
 
-echo "${MAIN_HOST}" > /certs/github_test_1
+#echo "${MAIN_HOST}" > /certs/github_test_1
+echo "change" > /certs/github_test_2
