@@ -5,6 +5,8 @@ services:
   base:
     build: .
     container_name: build_certs
+    environment:
+      - MAIN_HOST=${HOST}
     volumes:
       - certificates:/certs
 
