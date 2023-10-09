@@ -1,26 +1,13 @@
 version: '3'
 
 services:
-  certificates:
-    image: quay.io/centos/centos:stream8
-    container_name: certificates
-    command: mkdir -p /certificates && \ 
-             if [ -d /etc/letsencrypt ]; then
-                 cp -r /etc/letsencrypt /certificates
-             else
-                 openssl req -new -x509 -nodes -out /certificates/server.crt -keyout /certificates/server.key -subj '/CN=localhost'
-             fi
 
+  base:
+    build: .
+    container_name: build_certs
     volumes:
-      - certificates:/certificates
-    networks:
-      - certificate
+      - certificates:/certs
 
 volumes:
   certificates:
-  
-networks:
-  certificate:
-    ipam:
-      config:
-        - subnet: 172.32.0.0/16
+    external: true
