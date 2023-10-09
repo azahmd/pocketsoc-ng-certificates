@@ -10,6 +10,8 @@ services:
       - MAIN_ORG=${MAIN_ORG}
     volumes:
       - certificates:/certs
+    networks:
+      - certificate
 
 volumes:
   certificates:
