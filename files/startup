@@ -1,3 +1,3 @@
 #! /bin/bash
 
-openssl req -new -x509 -nodes -out /certs/server.crt -keyout /certs/server.key -subj "/O=${MAIN_ORG}/CN=${MAIN_HOST}"
+openssl req -new -x509 -nodes -out /certs/server.crt -keyout /certs/server.key -subj "/C=${MAIN_COUNTRY}/O=${MAIN_ORG}/CN=${MAIN_HOST}"
