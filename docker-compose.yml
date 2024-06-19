@@ -8,6 +8,7 @@ services:
     environment:
       - MAIN_HOST=${MAIN_HOST}
       - MAIN_ORG=${MAIN_ORG}
+      - MAIN_COUNTRY=${MAIN_COUNTRY}
     volumes:
       - certificates:/certs
     networks:
