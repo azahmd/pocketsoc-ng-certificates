@@ -1,6 +1,6 @@
-FROM centos:7
+FROM rockylinux:9
 
-RUN yum install -y openssl
+RUN dnf install -y openssl
 
 ADD ./files /files
 
